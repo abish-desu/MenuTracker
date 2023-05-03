@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import Categories from '../components/Categories'
+import "../styles/globals.css"
 export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
   

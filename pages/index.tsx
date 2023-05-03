@@ -1,7 +1,7 @@
 import React, { useState  } from 'react';
 import Categories from '../components/Categories';
 import MenuCard from '../components/MenuCard';
-
+import Tracker from '../components/Tracker';
 import items from './data';
 import {MyType} from './data'
 
@@ -33,14 +33,14 @@ const newItems= items.filter((item) => item.category === category)
   
 return (
   //Main div
-  <div>
+  <div className='flex'>
     {/*Menu div*/ }   
-    <div>
+    <div className='h-[400px] w-[400px] ' >
       <h1>Menu</h1>
       <Categories category={cat} filterItems={filterItems}/>
       <MenuCard menu={menutItems} />
     </div>
-    {/* tracker inteface */}
+    <Tracker/>
   </div>
 )
 }

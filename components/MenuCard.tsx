@@ -11,7 +11,7 @@ const MenuCard = ({menu}:MenuProps) => {
             <h4>{title}</h4>
           </article>
         )
-      })};
+      })}
 
 
     </div>
