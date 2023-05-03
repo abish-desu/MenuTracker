@@ -1,9 +1,21 @@
 import React from 'react'
+import { MenuProps } from '../pages'
 
-const MenuCard = () => {
+const MenuCard = ({menu}:MenuProps) => {
   return (
-    <div>MenuCard</div>
-  )
-}
+    <div>
+      {menu.map((men)=>{
+        const { id, title, img, price } = men;
+        return(
+          <article key={id}>
+            <h4>{title}</h4>
+          </article>
+        )
+      })};
 
-export default MenuCard
+
+    </div>
+  );
+};
+
+export default MenuCard;
