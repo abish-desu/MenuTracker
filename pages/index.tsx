@@ -15,7 +15,7 @@ export type MenuProps={
 
 
 
-const Category:string[] = ['all', ...new Set(items.map((item) => item.category))];
+const Category:string[] = ['ALL', ...new Set(items.map((item) => item.category))];
 const index = () => {
 
   const [cat,setCat] = useState<string[]>(Category);
@@ -23,7 +23,7 @@ const index = () => {
  
   //Filters items trigerred from categories 
   const filterItems = (category:string)=>{
-if (category==="all"){
+if (category==="ALL"){
     setMenuItems(items);
     return;
 }
@@ -33,12 +33,12 @@ const newItems= items.filter((item) => item.category === category)
   
 return (
   //Main div
-  <div className='flex mt-32'>
+  <div className='flex mt-10'>
     {/*Menu div*/ }   
     <div className='h-auto w-[850px] flex justify-center' >
-      <div className='flex flex-col'>
+      <div className='flex flex-col w-[600px]'>
       <div className='flex justify-center'> 
-      <h1 className=''>Menu</h1>
+      <h1 className='m-5'>MENU</h1>
       </div>
       <Categories category={cat} filterItems={filterItems}/>
       <MenuCard menu={menutItems} />
