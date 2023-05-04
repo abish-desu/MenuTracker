@@ -33,12 +33,16 @@ const newItems= items.filter((item) => item.category === category)
   
 return (
   //Main div
-  <div className='flex'>
+  <div className='flex mt-32'>
     {/*Menu div*/ }   
-    <div className='h-[400px] w-[400px] ' >
-      <h1>Menu</h1>
+    <div className='h-auto w-[850px] flex justify-center' >
+      <div className='flex flex-col'>
+      <div className='flex justify-center'> 
+      <h1 className=''>Menu</h1>
+      </div>
       <Categories category={cat} filterItems={filterItems}/>
       <MenuCard menu={menutItems} />
+      </div>
     </div>
     <Tracker/>
   </div>
