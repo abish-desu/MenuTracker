@@ -9,7 +9,9 @@ const MenuCard = ({menu}:MenuProps) => {
         return(
           <article key={id}>
             <h4>{title}</h4>
-            <button>add</button>
+            <button 
+            // onClick={()=>filterMenu()}
+            >add</button>
           </article>
         )
       })}
