@@ -2,7 +2,14 @@ import React from 'react'
 
 const TrackedList = () => {
   return (
-    <div>TrackedList</div>
+    <>
+    <article>
+      Hello
+    </article>
+    <article>
+      Hello
+    </article>
+    </>
   )
 }
 
