@@ -13,7 +13,7 @@ const items: MyType[] = [
     title: "buttermilk pancakes",
     category: "BREAKFAST",
     price: 15.99,
-    img: "./img/item-1.jpeg",
+    img: "./img/item-2.jpeg",
     desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
   },
   {
@@ -29,7 +29,7 @@ const items: MyType[] = [
     title: "godzilla milkshake",
     category: "SHAKES",
     price: 6.99,
-    img: "./img/item-3.jpeg",
+    img: "./img/item-4.jpeg",
     desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
   },
   {
