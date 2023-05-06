@@ -63,7 +63,7 @@ const index = () => {
     <div className="flex mt-10">
       {/*Menu div*/}
       <div className="h-auto w-[1000px] flex justify-center">
-        <div className="flex flex-col w-[700px]">
+        <div className="flex flex-col w-[800px]">
           <div className="flex justify-center">
             <h1 className="m-5 text-2xl font-sans font-semibold text-zinc-950 pb-1 border-b-4 border-t-4 border-gray-800">
               MENU

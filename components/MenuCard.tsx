@@ -13,7 +13,7 @@ const MenuCard = ({ menu, filterMenu }: MenuProps) => {
               <h4 className="text-white font-mono text-xs">{title.toUpperCase()}</h4>
               <button
                 onClick={() => filterMenu({ id, img, title, price })}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-white hover:bg-blue-700 text-darkfont-bold py-2 px-4 rounded"
               >
                 Add
               </button>
