@@ -1,7 +1,7 @@
 import React from 'react'
 import { MenuProps } from '../pages'
 
-const MenuCard = ({menu}:MenuProps) => {
+const MenuCard = ({menu,filterMenu}:MenuProps) => {
   return (
     <div className=''>
       {menu.map((men)=>{
@@ -10,7 +10,7 @@ const MenuCard = ({menu}:MenuProps) => {
           <article key={id}>
             <h4>{title}</h4>
             <button 
-            // onClick={()=>filterMenu()}
+            onClick={()=>filterMenu({id, img, title, price})}
             >add</button>
           </article>
         )

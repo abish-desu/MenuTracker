@@ -5,39 +5,57 @@ import Tracker from "../components/Tracker";
 import items from "./data";
 import { MyType } from "./data";
 
+interface ListItem {
+  id: number;
+  img: string;
+  title: string;
+  price: number;
+}
+export interface TrackerProp{
+  list:ListItem[];
+}
+
+
 export type Props = {
   category: Array<string>;
-  filterItems: (category: string) => void;
-
+  filterItems: (cate: string) => void;
 };
 
 export type MenuProps = {
   menu: MyType[];
+  filterMenu: (items: {
+    id: number;
+    img: string;
+    title: string;
+    price: number;
+  }) => void;
 };
-
 const Category: string[] = [
   "ALL",
   ...new Set(items.map((item) => item.category)),
 ];
 const index = () => {
+  const [list, setList] = useState<ListItem[]>([]);
+  const [listItem, setListItem] = useState<ListItem | null>(null);
   const [cat, setCat] = useState<string[]>(Category);
   const [menutItems, setMenuItems] = useState(items);
 
-
-// filter menu
-  const filterMenu =()=>{
-    
-
-  }
-
   //Filters items trigerred from categories
-  const filterItems = (category: string) => {
-    if (category === "ALL") {
+  const filterItems = (cate: string) => {
+    if (cate === "ALL") {
       setMenuItems(items);
       return;
     }
-    const newItems = items.filter((item) => item.category === category);
+    const newItems = items.filter((item) => item.category === cate);
     setMenuItems(newItems);
+  };
+
+//adds clicked menu to the tracker
+  const filterMenu = (rec: ListItem) => {
+    setListItem(rec);
+    console.log(listItem);
+    setList((prevList) => [...prevList, rec]);
+    console.log(list)
   };
 
   return (
@@ -52,10 +70,10 @@ const index = () => {
             </h1>
           </div>
           <Categories category={cat} filterItems={filterItems} />
-          <MenuCard menu={menutItems} />
+          <MenuCard menu={menutItems} filterMenu={filterMenu} />
         </div>
       </div>
-      <Tracker />
+      <Tracker list={list}/>
     </div>
   );
 };
