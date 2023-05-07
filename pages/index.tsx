@@ -60,6 +60,7 @@ const index = () => {
 
   return (
     //Main div
+    
     <div className="flex mt-10">
       {/*Menu div*/}
       <div className="h-auto w-[1000px] flex justify-center">
