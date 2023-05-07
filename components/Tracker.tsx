@@ -11,7 +11,7 @@ const Tracker = ({list}:TrackerProp) => {
       </div>
       <TrackedList list={list}/>
      </div>
-     </div>
+     </div> 
   )
 }
 
