@@ -14,6 +14,8 @@ interface ListItem {
 }
 export interface TrackerProp {
   list: ListItem[];
+  onRemove:(num:number) => void;
+  clearList:()=>void;
 }
 
 export type Props = {
@@ -59,7 +61,7 @@ const index = () => {
       setList((prevList) =>
         prevList.map((item) =>
           item.id === existingItem.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: item.quantity + 1,price:item.price+rec.price }
             : item
         )
       );
@@ -67,6 +69,12 @@ const index = () => {
       // Item doesn't exist, add it to the list
       setList((prevList) => [...prevList, rec]);
     }
+  };
+  const onRemove = (id:number)=>{
+    setList(list.filter((item) => item.id !== id));
+  }
+  const clearList = () => {
+    setList([]);
   };
   return (
     //Main div
@@ -84,7 +92,7 @@ const index = () => {
           <MenuCard menu={menutItems} filterMenu={filterMenu} />
         </div>
       </div>
-      <Tracker list={list} />
+      <Tracker list={list} onRemove={onRemove} clearList={clearList}/>
     </div>
   );
 };

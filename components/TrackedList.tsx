@@ -1,14 +1,17 @@
 import React from "react";
 import { TrackerProp } from "../pages";
 
-const TrackedList = ({ list}: TrackerProp) => {
+const TrackedList = ({ list, onRemove, clearList }: TrackerProp) => {
+
+  const totalPrice = list.reduce((acc, item) => acc + item.price, 0);
+
   return (
-    <div className="flex flex-col items-center mt-4"> {/* Updated line */}
+    <div className="flex flex-col items-center mt-4">
       {list.map((lis) => {
-        const { id, title, img, price,quantity } = lis;
+        const { id, title, img, price, quantity } = lis;
         return (
           <article key={id}>
-            <div className="bg-black shadow-lg rounded-lg p-5 transform transition-transform hover:scale-105 w-[350px] mt-2">
+            <div className="bg-black shadow-lg rounded-lg p-5 transform transition-transform hover:scale-105 w-[350px] mt-1">
               <div className="flex">
                 <img
                   src={img}
@@ -20,10 +23,13 @@ const TrackedList = ({ list}: TrackerProp) => {
                 </h4>
               </div>
               <div className="flex justify-evenly">
-                <button className="bg-white font-sans text-black py-1 px-[30px]  rounded">
+                <button className="bg-white font-sans text-black py-1 px-[30px] rounded">
                   Quantity: {quantity}
                 </button>
-                <button className="bg-red-600 hover:bg-red-700 font-sans text-white py-1 px-[30px]  rounded">
+                <button
+                  className="bg-red-600 hover:bg-red-700 font-sans text-white py-1 px-[30px] rounded"
+                  onClick={() => onRemove(id)}
+                >
                   Remove
                 </button>
               </div>
@@ -31,6 +37,11 @@ const TrackedList = ({ list}: TrackerProp) => {
           </article>
         );
       })}
+      <div className="bg-black shadow-lg rounded-lg p-5 transform transition-transform hover:scale-105 w-[350px] mt-1">
+        <h4 className="text-white font-sans text-sm text-center">
+          TOTAL: {totalPrice}$
+        </h4>
+      </div>
     </div>
   );
 };
