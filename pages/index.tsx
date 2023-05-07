@@ -10,11 +10,11 @@ interface ListItem {
   img: string;
   title: string;
   price: number;
+  quantity: number;
 }
-export interface TrackerProp{
-  list:ListItem[];
+export interface TrackerProp {
+  list: ListItem[];
 }
-
 
 export type Props = {
   category: Array<string>;
@@ -28,6 +28,7 @@ export type MenuProps = {
     img: string;
     title: string;
     price: number;
+    quantity: number;
   }) => void;
 };
 const Category: string[] = [
@@ -36,7 +37,7 @@ const Category: string[] = [
 ];
 const index = () => {
   const [list, setList] = useState<ListItem[]>([]);
-  const [listItem, setListItem] = useState<ListItem | null>(null);
+
   const [cat, setCat] = useState<string[]>(Category);
   const [menutItems, setMenuItems] = useState(items);
 
@@ -50,17 +51,26 @@ const index = () => {
     setMenuItems(newItems);
   };
 
-//adds clicked menu to the tracker
+  //adds clicked menu to the tracker
   const filterMenu = (rec: ListItem) => {
-    setListItem(rec);
-    console.log(listItem);
-    setList((prevList) => [...prevList, rec]);
-    console.log(list)
+    const existingItem = list.find((item) => item.id === rec.id);
+    if (existingItem) {
+      // Item already exists, increase its quantity
+      setList((prevList) =>
+        prevList.map((item) =>
+          item.id === existingItem.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      // Item doesn't exist, add it to the list
+      setList((prevList) => [...prevList, rec]);
+    }
   };
-
   return (
     //Main div
-    
+
     <div className="flex mt-10">
       {/*Menu div*/}
       <div className="h-auto w-[1000px] flex justify-center">
@@ -74,7 +84,7 @@ const index = () => {
           <MenuCard menu={menutItems} filterMenu={filterMenu} />
         </div>
       </div>
-      <Tracker list={list}/>
+      <Tracker list={list} />
     </div>
   );
 };
