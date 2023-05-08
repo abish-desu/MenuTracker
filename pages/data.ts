@@ -20,7 +20,7 @@ const items: MyType[] = [
   },
   {
     id: 2,
-    title: "diner double",
+    title: "dinner double",
     category: "LUNCH",
     price: 13.99,
     img: "./img/item-2.jpeg",
@@ -40,7 +40,7 @@ const items: MyType[] = [
   },
   {
     id: 4,
-    title: "country delight",
+    title: "French Toast N pasta",
     category: "BREAKFAST",
     price: 20.99,
     img: "./img/item-4.jpeg",
@@ -50,7 +50,7 @@ const items: MyType[] = [
   },
   {
     id: 5,
-    title: "egg attack",
+    title: "burger",
     category: "LUNCH",
     price: 22.99,
     img: "./img/item-5.jpeg",
@@ -60,7 +60,7 @@ const items: MyType[] = [
   },
   {
     id: 6,
-    title: "oreo dream",
+    title: "oreo frappe",
     category: "SHAKES",
     price: 18.99,
     img: "./img/item-6.jpeg",
@@ -80,7 +80,7 @@ const items: MyType[] = [
   },
   {
     id: 8,
-    title: "american classic",
+    title: "Burger n fries",
     category: "LUNCH",
     price: 12.99,
     img: "./img/item-8.jpeg",
@@ -90,7 +90,7 @@ const items: MyType[] = [
   },
   {
     id: 9,
-    title: "quarantine buddy",
+    title: "Milk buddy",
     category: "SHAKES",
     price: 16.99,
     img: "./img/item-9.jpeg",
