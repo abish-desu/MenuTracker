@@ -39,7 +39,7 @@ const TrackedList = ({ list, onRemove, clearList }: TrackerProp) => {
       })}
       <div className="bg-black shadow-lg rounded-lg p-5 transform transition-transform hover:scale-105 w-[350px] mt-1">
         <h4 className="text-white font-sans text-sm text-center">
-          TOTAL: {totalPrice}$
+          TOTAL: {totalPrice.toFixed(2)}$
         </h4>
       </div>
     </div>
