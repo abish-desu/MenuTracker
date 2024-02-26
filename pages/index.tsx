@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Categories from "../components/Categories";
 import MenuCard from "../components/MenuCard";
 import Tracker from "../components/Tracker";
-import items from "./data";
-import { MyType } from "./data";
+import items from "../data/data";
+import { MyType } from "../data/data";
 
 interface ListItem {
   id: number;

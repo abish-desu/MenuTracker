@@ -28,7 +28,7 @@ const items: MyType[] = [
     quantity:1
 
   },
-  {
+  {     
     id: 3,
     title: "godzilla milkshake",
     category: "SHAKES",
@@ -88,7 +88,7 @@ const items: MyType[] = [
     quantity:1
 
   },
-  {
+  { 
     id: 9,
     title: "Milk buddy",
     category: "SHAKES",
